@@ -27,7 +27,7 @@ jobs:
           cache: npm
       - name: Install dependencies
         working-directory: fx-site
-        run: npm ci
+        run: npm install
       - name: Generate posts
         working-directory: fx-site
         run: npm run gen
