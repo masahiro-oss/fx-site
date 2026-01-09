@@ -22,9 +22,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+        
+
+                with:
+        node-version: 20
+          
       - name: Install dependencies
         working-directory: fx-site
         run: npm install
