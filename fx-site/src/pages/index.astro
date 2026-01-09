@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import fs from "node:fs";
+import path from "node:path";
+
+const postsDir = path.resolve("content/posts");
+const files = fs.existsSync(postsDir)
+  ? fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"))
+  : [];
+const items = files.map((f) => {
+  const slug = f.replace(/\.md$/, "");
+  return { slug };
+});
+---
+<Base title="FX投資ナレッジ" description="XAUUSD USDJPY 海外FX 詐欺回避 勝率の構造ページ">
+  <h1>ページ一覧</h1>
+  <p class="badge">XAUUSD / USDJPY / 海外FX / 詐欺回避 / 勝率</p>
+  <hr class="hr" />
+  <ul>
+    {items.map((i) => (
+      <li>
+        <a href={`${Astro.base}/posts/${i.slug}/`}>{i.slug}</a>
+      </li>
+    ))}
+  </ul>
+</Base>

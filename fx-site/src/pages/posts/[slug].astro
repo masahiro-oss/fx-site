@@ -1,0 +1,26 @@
+---
+import Base from "../../layouts/Base.astro";
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
+import { marked } from "marked";
+
+const { slug } = Astro.params;
+
+const filePath = path.resolve(`content/posts/${slug}.md`);
+if (!fs.existsSync(filePath)) throw new Error(`not found: ${filePath}`);
+
+const raw = fs.readFileSync(filePath, "utf-8");
+const { data, content } = matter(raw);
+const html = marked.parse(content);
+---
+<Base
+  title={data.title ?? slug}
+  description={`${data.primary_kw ?? slug}の構造ページ`}
+>
+  <div class="badge">
+    {data.primary_kw} / {data.intent}
+  </div>
+  <hr class="hr" />
+  <div set:html={html} />
+</Base>

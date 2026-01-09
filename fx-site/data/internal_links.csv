@@ -1,0 +1,9 @@
+from_slug,to_slug,anchor
+xauusd-winrate,kaigaifx-recommend,海外FX比較はこちら
+xauusd-danger,kaigaifx-scam,詐欺回避のチェックはこちら
+xauusd-scalping,xauusd-winrate,勝率の考え方はこちら
+usdjpy-winrate,fx-winrate-truth,勝率の誤解はこちら
+usdjpy-risk,kaigaifx-scam,危険サイン一覧はこちら
+kaigaifx-scam,kaigaifx-recommend,安全な選び方はこちら
+fx-not-winning,fx-winrate-truth,数字の落とし穴はこちら
+gold-trade-howto,xauusd-danger,危険ポイントはこちら

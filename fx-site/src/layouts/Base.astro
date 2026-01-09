@@ -1,0 +1,30 @@
+---
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href={`${Astro.base}/styles/global.css`} />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hdr">
+        <a class="brand" href={`${Astro.base}/`}>FX投資ナレッジ</a>
+        <nav class="nav">
+          <a href={`${Astro.base}/posts/xauusd-winrate/`}>XAUUSD</a>
+          <a href={`${Astro.base}/posts/usdjpy-winrate/`}>USDJPY</a>
+          <a href={`${Astro.base}/posts/kaigaifx-recommend/`}>海外FX</a>
+          <a href={`${Astro.base}/posts/kaigaifx-scam/`}>詐欺回避</a>
+        </nav>
+      </header>
+      <article class="card">
+        <slot />
+      </article>
+      <footer class="ftr">© {new Date().getFullYear()}</footer>
+    </main>
+  </body>
+</html>
